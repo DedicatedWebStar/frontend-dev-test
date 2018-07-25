@@ -1,0 +1,29 @@
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './home.component';
+import { SecureComponent } from './components/secure/secure.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: HomeComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'secure',
+        pathMatch: 'full'
+      },
+      {
+        path: 'secure',
+        component: SecureComponent,
+        // canActivate: [GuestGuard]
+      }
+    ]
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class HomeRoutingModule { }

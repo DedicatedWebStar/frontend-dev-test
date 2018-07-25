@@ -5,6 +5,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AuthRoutingModule } from './auth-routing.module';
 import { AuthComponent } from './auth.component';
 import { LoginComponent } from './login/login.component';
+import { SharedModule } from '../shared/shared.module';
+import { AuthService } from './auth.service';
 
 import {
   MatButtonModule,
@@ -25,8 +27,10 @@ import { RegisterComponent } from './register/register.component';
     MatInputModule,
     MatCardModule,
     MatIconModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    SharedModule
   ],
-  declarations: [AuthComponent, LoginComponent, RegisterComponent]
+  declarations: [AuthComponent, LoginComponent, RegisterComponent],
+  providers: [AuthService]
 })
 export class AuthModule { }

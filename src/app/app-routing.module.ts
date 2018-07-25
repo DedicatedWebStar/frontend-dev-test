@@ -13,6 +13,10 @@ const routes: Routes = [
     path: 'auth',
     loadChildren: './auth/auth.module#AuthModule'
   },
+  {
+    path: 'home',
+    loadChildren: './home/home.module#HomeModule'
+  },
   // {
   //     path: 'error/:status_code',
   //     component: ErrorComponent

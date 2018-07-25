@@ -11,11 +11,13 @@ import { NavbarComponent } from './partials/navbar/navbar.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module';
+import { HomeModule } from './home/home.module';
 
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
 import { CoreModule } from './core/core.module';
+// import { EqualValidatorDirective } from './shared/directives/equal-validator.directive';
 
 
 
@@ -24,13 +26,15 @@ import { CoreModule } from './core/core.module';
         AppComponent,
         HomeComponent,
         ErrorComponent,
-        NavbarComponent
+        NavbarComponent,
+        // EqualValidatorDirective
     ],
     imports: [
         BrowserModule,
         HttpStatusModule,
         AppRoutingModule,
         AuthModule,
+        HomeModule,
         NoopAnimationsModule,
         ToastrModule.forRoot(),
         CoreModule

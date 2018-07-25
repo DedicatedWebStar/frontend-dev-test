@@ -56,27 +56,6 @@
     }
   },
   "defaults": {
-    "styleExt": "scss",
-    "class": {
-      "spec": false
-    },
-    "component": {
-      "spec": false
-    },
-    "directive": {
-      "spec": false
-    },
-    "guard": {
-      "spec": false
-    },
-    "module": {
-      "spec": false
-    },
-    "pipe": {
-      "spec": false
-    },
-    "service": {
-      "spec": false
-    }
+    "styleExt": "scss"
   }
 }
