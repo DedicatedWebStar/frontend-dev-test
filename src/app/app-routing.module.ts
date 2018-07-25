@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './pages/home/home.component';
-import { ErrorComponent } from './pages/error/error.component';
+import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -14,17 +14,10 @@ const routes: Routes = [
     loadChildren: './auth/auth.module#AuthModule'
   },
   {
-    path: 'home',
-    loadChildren: './home/home.module#HomeModule'
+    path: '',
+    loadChildren: './home/home.module#HomeModule',
+    canActivate: [AuthGuard]
   },
-  // {
-  //     path: 'error/:status_code',
-  //     component: ErrorComponent
-  // },
-  // {
-  //     path: '**',
-  //     redirectTo: 'error/404'
-  // }
 ];
 
 @NgModule({

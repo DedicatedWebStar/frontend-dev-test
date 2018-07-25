@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
-// import { AuthService } from '../../auth.service';
+import { AuthService } from '../auth.service';
 
 const EMAIL_REGEX = /[^@]+@[^\.]+\..+/;
 
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    // private _authSerivce: AuthService,
+    private _authSerivce: AuthService,
     private _router: Router,
     private _toastr: ToastrService
    ) { }
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
           Validators.required,
           Validators.minLength(3),
           Validators.maxLength(100),
-          Validators.pattern(EMAIL_REGEX)
+          // Validators.pattern(EMAIL_REGEX)
         ])
       ],
       'password': [
@@ -49,15 +49,21 @@ export class LoginComponent implements OnInit {
   }
 
   submit() {
-    // this.loading = true;
-    // this._authSerivce.login(this.loginForm.value)
-    //   .subscribe(success => {
-    //     this.loading = false;
-    //     this._router.navigate(['/']);
-    //     this._toastr.success('Login Successfully');
-    //   }, error => {
-    //     this.loading = false;
-    //     this._toastr.error(error.error.message);
-    //   });
+    this.loading = true;
+    this._authSerivce.login(this.loginForm.value)
+      .subscribe(response => {
+        this.loading = false;
+        this._toastr.success('Login Successfully');
+      }, error => {
+        this.loading = false;
+        if (error.status === 200) {
+          this._toastr.success('Login Successfully');
+          this._router.navigate(['/secure']);
+          this._authSerivce.setAuth(error.error.text);
+        } else if (error.status === 401) {
+          this._toastr.error('Login failed');
+        }
+      }
+    );
   }
 }

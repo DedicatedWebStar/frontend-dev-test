@@ -15,10 +15,8 @@ export class EqualValidatorDirective implements Validator {
   validate(c: AbstractControl): { [key: string]: any } {
     // self value (e.g. retype password)
     const v = c.value;
-    console.log('vvvv', v);
     // control value (e.g. password)
     const e = c.root.get(this.validateEqual);
-    console.log('eee', e);
 
     // value not equal
     if (e && v !== e.value) {

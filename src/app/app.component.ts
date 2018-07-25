@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from './core/services/api.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
+  isAuthenticated: any;
+  constructor(
+    private _apiservice: ApiService
+  ) {
+    this.isAuthenticated = _apiservice.isAuthorized();
+  }
 }

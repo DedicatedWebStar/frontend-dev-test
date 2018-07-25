@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { switchMap } from 'rxjs/operators';
-// import { ApiService } from '../core/services/api.service';
+import { ApiService } from '../core/services/api.service';
 
 import 'rxjs/add/operator/map';
 
@@ -8,18 +8,18 @@ import 'rxjs/add/operator/map';
 export class AuthService {
 
   constructor(
-    // private _apiService: ApiService
+    private _apiService: ApiService
   ) { }
 
   login(data) {
-    // return this._apiService.post('/auth/login', data, false)
-    //   .map((res: any) => {
-    //     this._apiService.setAuthData(res);
-    //     return true;
-    //   });
-  }
-
-  register(data) {
-    // return this._apiService.post('/auth/register', data, false);
+    return this._apiService.login('/login', data)
+      .map((res: any) => {
+        console.log('res', res);
+        // this._apiService.setAuthData(res);
+        return true;
+      });
+    }
+  setAuth(token) {
+    this._apiService.setAuthData(token);
   }
 }
