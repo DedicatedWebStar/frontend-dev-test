@@ -9,20 +9,14 @@ import { HomeComponent } from './pages/home/home.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { NavbarComponent } from './partials/navbar/navbar.component';
 
-const routes: Routes = [
-    {
-        path: '',
-        component: HomeComponent
-    },
-    {
-        path: 'error/:status_code',
-        component: ErrorComponent
-    },
-    {
-        path: '**',
-        redirectTo: 'error/404'
-    }
-];
+import { AppRoutingModule } from './app-routing.module';
+import { AuthModule } from './auth/auth.module';
+
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
+import { CoreModule } from './core/core.module';
+
 
 
 @NgModule({
@@ -34,8 +28,12 @@ const routes: Routes = [
     ],
     imports: [
         BrowserModule,
-        RouterModule.forRoot(routes),
-        HttpStatusModule
+        HttpStatusModule,
+        AppRoutingModule,
+        AuthModule,
+        NoopAnimationsModule,
+        ToastrModule.forRoot(),
+        CoreModule
     ],
     providers: [
         AuthService
