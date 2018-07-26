@@ -1,0 +1,127 @@
+@import "src/styles.scss";
+
+.mat-menu-content {
+  overflow: hidden !important;
+}
+mat-toolbar {
+  height: 72px !important;
+  border-bottom: solid 1px #e5e5e5;
+  background-color: white !important;
+  width: 100% !important;
+  padding: 0 0px !important;
+  .userbar {
+    height: 100%;
+    width: 313px;
+    box-sizing: border-box;
+    flex-direction: row;
+    align-items: center;
+  }
+  .avatar-container {
+    width: 70px;
+    border-radius: 50%;
+    padding: 16px;
+    outline: none;
+    cursor: pointer;
+    .avatar {
+      outline: none;
+      border-radius: 50%;
+      width: 39.9px;
+      height: 39px;
+      margin: 0;
+      background-color: #e0e0e0;
+      border-color: #e0e0e0;
+    }
+  }
+}
+.menuTrigger {
+  .mat-menu-content {
+    padding: 0;
+  }
+  box-shadow: 0 3px 6px 0 rgba(0, 165, 172, 0.24);
+  border: solid 1px #f5f5f5;
+  @media only screen and (max-width: 1278px) {
+    display: none;
+  }
+  min-width: 288px !important;
+  max-width: 288px !important;
+  .content {
+    width: 296px;
+    overflow: hidden;
+    height: 46px;
+    cursor: auto !important;
+    .content-text {
+      color: #999999;
+      font-family: 'Avenir-Light';
+      font-size: 12px;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      position: absolute;
+    }
+    .content-type {
+      border-radius: 4px;
+      border: solid 1px #979797;
+      width:49px;
+      height:19px;
+      margin-left: 197px;
+      vertical-align: bottom;
+      span {
+        height: 100% !important;
+        width: 100%;
+        margin-right: 4px;
+        margin-left: 4px;
+        color: #999999;
+        font-family: 'Avenir-Light';
+        font-weight: 500;
+        font-size: 12px;
+      }
+    }
+  }
+  .setting {
+    height: 48px;
+  }
+  .outbutton {
+    height: 48px;
+    line-height: 38px;
+  }
+  mat-divider {
+    &:focus {
+      outline: none;
+    }
+    background-color: #f5f5f5;
+    opacity: 0.5;
+  }
+}
+.item {
+  &:focus {
+    outline: none;
+  }
+  .account_icon {
+    margin-top: -25px;
+    width: 16px;
+    height: 16px;
+  }
+  .item_text {
+    font-family: 'Avenir-Light';
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.57;
+    letter-spacing: 0.1px;
+    color: #000000;
+  }
+}
+.content {
+  min-width: 700px;
+  h3 {
+    width: 100%;
+  }
+  .portfolio {
+    width: 700px;
+    height: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+

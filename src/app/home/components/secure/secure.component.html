@@ -1,3 +1,35 @@
-<p>
-  secure works!!!!
-</p>
+<mat-toolbar>
+  <div class="userbar" fxlayout="row" [matMenuTriggerFor]="userMenu">
+    <div class="avatar-container mat-fuse-dark-700-bg"><img class="avatar" src="../../../../assets/image/User.svg"></div>
+  </div>
+  <mat-menu #userMenu="matMenu" class="menuTrigger" [overlapTrigger]="false">
+
+      <div mat-menu-item class="content" [disabled]="true">
+          <span class="content-text">Hello!</span>
+      </div>
+      <mat-divider></mat-divider>
+      <button mat-menu-item class="item setting">
+          <mat-icon><img src="../../../../assets/image/gear.svg" class="account_icon"></mat-icon>
+          <span class="item_text">Account Setting</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button (click)="logout()" class="item outbutton" mat-menu-item>
+          <mat-icon>exit_to_app</mat-icon>
+          <span class="item_text">Logout</span>
+      </button>
+
+  </mat-menu>
+</mat-toolbar>
+<div class="content">
+  <h3>Thanks for checking my test result!</h3><br>
+  <h4>I have worked on many Angular Projects such as eLearning, CRM, LMS.</h4><br>
+  <h4>If you want, I can share some source code of my previous projects.</h4><br><br>
+  <h4>Please check my portfolios.</h4><br><br>
+  <img src="../../../../assets/image/port1.png" class="portfolio">
+  <img src="../../../../assets/image/port2.png" class="portfolio">
+  <img src="../../../../assets/image/port3.png" class="portfolio">
+  <img src="../../../../assets/image/port4.png" class="portfolio">
+  <img src="../../../../assets/image/port5.png" class="portfolio">
+  <img src="../../../../assets/image/port6.png" class="portfolio">
+  <h4>Looking forward to working with you for a long term!</h4>
+</div>
