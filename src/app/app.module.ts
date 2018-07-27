@@ -17,9 +17,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
 import { CoreModule } from './core/core.module';
-// import { EqualValidatorDirective } from './shared/directives/equal-validator.directive';
-
-
+import { MaterialModule } from './common/material.module';
 
 @NgModule({
     declarations: [
@@ -27,7 +25,6 @@ import { CoreModule } from './core/core.module';
         HomeComponent,
         ErrorComponent,
         NavbarComponent,
-        // EqualValidatorDirective
     ],
     imports: [
         BrowserModule,
@@ -37,7 +34,8 @@ import { CoreModule } from './core/core.module';
         HomeModule,
         NoopAnimationsModule,
         ToastrModule.forRoot(),
-        CoreModule
+        CoreModule,
+        MaterialModule
     ],
     providers: [
         AuthService
